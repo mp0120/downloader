@@ -13,6 +13,12 @@ class ApiTest extends TestCase
      *
      * @return void
      */
+    public function test_resources_list()
+    {
+        $response = $this->call('POST', '/api/list');
+        $this->assertEquals(200, $response->status());
+    }
+    
     public function test_adding_resource_method_n()
     {
         $response = $this->call('POST', '/api/download', [

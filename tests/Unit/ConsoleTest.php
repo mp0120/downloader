@@ -13,6 +13,12 @@ class ConsoleTest extends TestCase
      *
      * @return void
      */
+    public function test_list_of_resource()
+    {
+        $response = $this->artisan('resource:list');
+        $this->assertEquals(0, $response);
+    }
+    
     public function test_adding_resource_method_n()
     {
         $response = $this->artisan('resource:download', [
