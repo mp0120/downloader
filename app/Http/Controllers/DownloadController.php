@@ -41,6 +41,32 @@ class DownloadController extends Controller
     
     //API and features
     
+    public function listOfResources() {
+        $list = Resource::select('id', 'resource', 'status')->get()->toArray();
+        $list = array_map(function ($resource) {
+            $result = [
+                'resource' => $resource['resource'],
+                'link' => url('download/' . $resource['id'])
+            ];
+            switch ($resource['status']) {
+                case Resource::PENDING:
+                    $result['status'] = 'PENDING';
+                    break;
+                case Resource::DOWNLOADING:
+                    $result['status'] = 'DOWNLOADING';
+                    break;
+                case Resource::ERROR:
+                    $result['status'] = 'ERROR';
+                    break;
+                case Resource::COMPLETE:
+                    $result['status'] = 'COMPLETE';
+                    break;
+            }
+            return $result;
+        }, $list);
+        return response()->json($list, 200);
+    }
+    
     public function download(Request $request) {
         $validator = Validator::make($request->all(), [
             'url' => 'required|url|max:255',

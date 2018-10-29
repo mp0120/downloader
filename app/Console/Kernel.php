@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\DownloadResource::class,
         \App\Console\Commands\ScheduleResource::class,
+        \App\Console\Commands\ShowResources::class,
     ];
 
     /**
