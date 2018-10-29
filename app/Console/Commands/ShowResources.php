@@ -46,16 +46,16 @@ class ShowResources extends Command
             $result['link'] = url('download/' . $resource['id']) . ' ';
             switch ($resource['status']) {
                 case Resource::PENDING:
-                    $result['status'] = ' PENDING';
+                    $result['status'] = 'PENDING';
                     break;
                 case Resource::DOWNLOADING:
-                    $result['status'] = ' DOWNLOADING';
+                    $result['status'] = 'DOWNLOADING';
                     break;
                 case Resource::ERROR:
-                    $result['status'] = ' ERROR';
+                    $result['status'] = 'ERROR';
                     break;
                 case Resource::COMPLETE:
-                    $result['status'] = ' COMPLETE';
+                    $result['status'] = 'COMPLETE';
                     break;
             }
             
@@ -79,6 +79,21 @@ class ShowResources extends Command
                 $fields_length['status'] = strlen($resource['status']);
             }
         }
+        
+        $output = '| RESOURCE';
+        for ( $i = 0; $i < $fields_length['resource'] - strlen('RESOURCE'); $i++) {
+            $output .= ' ';
+        }
+        $output .= ' | LINK';
+        for ( $i = 0; $i < $fields_length['link'] - strlen('LINK'); $i++) {
+            $output .= ' ';
+        }
+        $output .= ' | STATUS';
+        for ( $i = 0; $i < $fields_length['status'] - strlen('STATUS'); $i++) {
+            $output .= ' ';
+        }
+        $output .= ' |';
+        $this->warn($output);
         
         foreach ($list as $resource) {
             $output = '| ';
