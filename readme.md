@@ -5,4 +5,5 @@
 
 # Installation
 After downloading you should run in terminal `composer update`.
-For downloading resources with status PENDING you need to update cron tasks.
+
+For downloading resources with non-immediately you need to update cron tasks.
