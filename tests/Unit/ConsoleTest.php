@@ -13,7 +13,7 @@ class ConsoleTest extends TestCase
      *
      * @return void
      */
-    public function testAddingResourceMethodN()
+    public function test_adding_resource_method_n()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -22,7 +22,7 @@ class ConsoleTest extends TestCase
         $this->assertEquals(0, $response);
     }
     
-    public function testAddingResourceMethodR()
+    public function test_adding_resource_method_r()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -31,7 +31,7 @@ class ConsoleTest extends TestCase
         $this->assertEquals(0, $response);
     }
     
-    public function testAddingResourceMethodA()
+    public function test_adding_resource_method_a()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -40,7 +40,7 @@ class ConsoleTest extends TestCase
         $this->assertEquals(0, $response);
     }
     
-    public function testAddingResourceMethodNImmediately()
+    public function test_adding_resource_method_n_immediately()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -49,7 +49,7 @@ class ConsoleTest extends TestCase
         $this->assertEquals(0, $response);
     }
     
-    public function testAddingResourceMethodRImmediately()
+    public function test_adding_resource_method_r_immediately()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -58,7 +58,7 @@ class ConsoleTest extends TestCase
         $this->assertEquals(0, $response);
     }
     
-    public function testAddingResourceMethodAImmediately()
+    public function test_adding_resource_method_a_immediately()
     {
         $response = $this->artisan('resource:download', [
             'url' => 'http://localhost:8000/testFile.txt', 

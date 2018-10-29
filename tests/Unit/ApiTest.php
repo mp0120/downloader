@@ -13,7 +13,7 @@ class ApiTest extends TestCase
      *
      * @return void
      */
-    public function testAddingResourceMethodN()
+    public function test_adding_resource_method_n()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -24,7 +24,7 @@ class ApiTest extends TestCase
         $this->assertEquals(202, $response->status());
     }
     
-    public function testAddingResourceMethodR()
+    public function test_adding_resource_method_r()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -35,7 +35,7 @@ class ApiTest extends TestCase
         $this->assertEquals(202, $response->status());
     }
     
-    public function testAddingResourceMethodA()
+    public function test_adding_resource_method_a()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -46,7 +46,7 @@ class ApiTest extends TestCase
         $this->assertEquals(202, $response->status());
     }
     
-    public function testAddingResourceMethodNImmediately()
+    public function test_adding_resource_method_n_immediately()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -58,7 +58,7 @@ class ApiTest extends TestCase
         $this->assertEquals(202, $response->status());
     }
     
-    public function testAddingResourceMethodRImmediately()
+    public function test_adding_resource_method_r_immediately()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
@@ -70,7 +70,7 @@ class ApiTest extends TestCase
         $this->assertEquals(202, $response->status());
     }
     
-    public function testAddingResourceMethodAImmediately()
+    public function test_adding_resource_method_a_immediately()
     {
         $response = $this->call('POST', '/api/download', [
             'url' => 'http://localhost:8000/testFile.txt', 
